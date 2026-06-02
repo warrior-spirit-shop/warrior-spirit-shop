@@ -1,0 +1,76 @@
+.body-content{
+    margin: 20px 0 10px 0;
+}
+.container-btn-routes{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.container-btn-routes.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 12px 0;
+    background: #fff;
+    z-index: 999;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+.btn{
+    padding: 10px 16px;
+    border: none;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn:hover{
+    background: #e0e0e0;
+}
+.btn.active{
+    background: #0033A0;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .body-content {
+        margin: 32px auto 16px;
+        max-width: 1200px;
+        padding: 0 24px;
+    }
+
+    .container-btn-routes {
+        gap: 18px;
+        padding: 0 12px;
+        max-width: 920px;
+        margin: 0 auto;
+    }
+
+    .container-btn-routes.fixed {
+        padding: 16px 0;
+    }
+
+    .btn {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .body-content {
+        padding: 0 40px;
+    }
+
+    .container-btn-routes {
+        gap: 22px;
+    }
+
+    .btn {
+        padding: 14px 22px;
+    }
+}

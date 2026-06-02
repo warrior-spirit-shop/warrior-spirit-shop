@@ -1,0 +1,149 @@
+.container-section-shoes{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* AQUI TAMBIÉN SE DIERON LOS ESTILOS DE "ARTICULO.JSX" */
+.container-articulo{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 5px;
+    border-bottom: 1px solid #80ced6;
+    border-top: 1px solid #80ced6;
+}
+.img-articulo{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 5px;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: .3s;
+}
+.img-articulo:hover{
+    width: 195px;
+    height: 195px;
+    border: 2px solid blue;
+}
+.container-price-and-description{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+    padding: 7px 0 0 0;
+}
+.descripcion-articulo{
+    margin-bottom: 10px;
+}
+.precio-number-articulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: #333;
+    color: white;
+}
+.btn-comprar-articulo{
+    border: none;
+    padding: 7px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    background: #0033A0;
+    color: white;
+    font-size: 15px;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Desktop / tablet styles */
+@media (min-width: 768px) {
+    .container-section-shoes {
+        justify-content: center;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .container-articulo {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 16px;
+        border-radius: 12px;
+        background-color: #f8fbff;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .img-articulo {
+        width: 240px;
+        height: 240px;
+        border-radius: 10px;
+    }
+
+    .img-articulo:hover {
+        width: 238px;
+        height: 238px;
+    }
+
+    .container-price-and-description {
+        padding: 0 0 0 16px;
+    }
+
+    .descripcion-articulo {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 640px;
+        margin-bottom: 16px;
+    }
+
+    .precio-number-articulo {
+        justify-content: flex-start;
+        padding: 10px 14px;
+        border-radius: 10px;
+    }
+
+    .btn-comprar-articulo {
+        padding: 10px 16px;
+        font-size: 16px;
+        width: fit-content;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container-section-shoes {
+        max-width: 1200px;
+        padding: 32px 40px;
+    }
+
+    .container-articulo {
+        gap: 32px;
+        padding: 20px;
+    }
+
+    .img-articulo {
+        width: 280px;
+        height: 280px;
+    }
+
+    .img-articulo:hover {
+        width: 276px;
+        height: 276px;
+    }
+
+    .container-price-and-description {
+        padding-left: 24px;
+    }
+
+    .descripcion-articulo {
+        font-size: 1.05rem;
+        max-width: 720px;
+    }
+
+    .precio-number-articulo {
+        padding: 14px 18px;
+    }
+
+    .btn-comprar-articulo {
+        font-size: 17px;
+        padding: 12px 18px;
+    }
+}

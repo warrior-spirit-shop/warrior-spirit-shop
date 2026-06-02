@@ -1,0 +1,368 @@
+.factura-cliente{
+    position: absolute;
+    z-index: 2000;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.966);
+    font-family: sans-serif;
+}
+.factura-cliente-oculta{
+    visibility: hidden;
+}
+.name-store{
+    text-align: center;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px dashed black;
+}
+.factura-cliente.show-done::after{
+    content: "Hecho ✅";
+    position: absolute;
+    visibility: visible;
+    top: 250px;
+    right: 60px;
+    width: 200px;
+    height: 200px;
+    background: #34a853;
+    color: #fff;
+    font-weight: 700;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 14px;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    animation: fadeSlide 3s ease forwards;
+}
+.texto-tu-factura{
+    margin-bottom: 15px;
+    padding: 10px 5px 0 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+.cantidad-de-producto-container{
+    display: flex;
+    align-items: center;
+}
+.btn-incrementar-cantidad{
+    border: none;
+    font-size: 20px;
+    background: #0033A0;
+    color: white;
+    padding: 7px;
+    height: 35px;
+    width: 35px;
+    margin: 0 5px 0 0;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.btn-incrementar-cantidad:hover{
+    background: #4285F4;
+    color: #333;
+}
+.btn-restar-cantidad{
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    border: none;
+    font-size: 40px;
+    background: #0033A0;
+    color: white;
+    padding: 7px;
+    padding-bottom: 12px;
+    height: 35px;
+    width: 35px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.btn-restar-cantidad:hover{
+    background: #4285F4;
+    color: #333;
+}
+.name-client-container{
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px 0;
+    padding: 0 5px 0 5px;
+}
+.addrees-client-container{
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px 0;
+    padding: 0 5px 0 5px;
+}
+.phone-number-client-container{
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px 0;
+    padding: 0 5px 0 5px;
+}
+.shoe-size-container{
+    display: flex;
+    align-items: center;
+    margin: 0 0 15px 0;
+    padding: 0 5px 0 5px;
+}
+.input-factura{
+    border: none;
+    outline: none;
+    margin: 0 0 0 15px;
+    font-size: 15px;
+    flex-grow: 1;
+    padding: 5px;
+}
+.input-talla{
+    background-color: #e6f0ff; /* light blue derived from primary blue */
+    color: #002a66; /* dark blue for contrast */
+}
+.product-name-container{
+    padding: 0 5px 0 5px;
+    margin: 0 0 15px 0;
+}
+.product-name{
+    margin: 0 0 0 15px;
+}
+.cantidad-de-producto-container{
+    padding: 0 5px 0 5px;
+    margin: 0 0 15px 0;
+}
+.cantidad-de-producto-numero{
+    margin: 0 10px 0 15px;
+}
+.precio-total-container{
+    margin: 0 0 15px 0;
+    padding: 0 5px 0 5px;
+}
+.precio-total{
+    margin: 0 0 0 15px;
+}
+.btn-important-in-factura{
+    border: none;
+    outline: none;
+    width: 80px;
+    height: 30px;
+    background: #0033A0;
+    color: white;
+    border-radius: 7px;
+    padding: 0 7px;
+    cursor: pointer;
+    transition: .2s;
+    -webkit-user-select: none;
+    user-select: none;
+}   
+.btn-important-in-factura:hover{
+    background: #4285F4;
+    color: #333;
+}
+.btn-close-factura{
+    background-color: #34a853;
+}
+.container-btns-important-in-factura{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.container-btn-cancelar-compra{
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-btn-cancelar-compra.show-cancel::after{
+    content: "Cancelada ❌";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -250px;
+    right: 60px;
+    width: 200px;
+    height: 200px;
+    bottom: calc(100% + 12px);
+    background: #f44336;
+    color: #fff;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 999px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.16);
+    animation: fadeSlideCancel 3s ease forwards;
+}
+.btn-cancelar-compra{
+    border: none;
+    border-radius: 7px;
+    color: white;
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 200px;
+    background-color: #f65314;
+    font-size: 15px;
+    transition: .2s;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.texto-compartir-factura{
+    padding: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    color: #4b2e00;
+    text-align: center;
+    background: linear-gradient(90deg, #fff3cd 0%, #ffe8a1 50%, #fff3cd 100%);
+    background-size: 200% 100%;
+    border: 1px solid #ffe8a0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    animation: warningShift 3s linear infinite;
+}
+
+.texto-compartir-factura::before{
+    content: "⚠️";
+    font-size: 18px;
+    margin-right: 6px;
+}
+
+@keyframes warningShift{
+    0%{ background-position: 0% 50%; }
+    50%{ background-position: 100% 50%; }
+    100%{ background-position: 0% 50%; }
+}
+@keyframes fadeSlide {
+    0% { opacity: 0; transform: translateY(-10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes fadeSlideCancel {
+    0% { opacity: 0; transform: translateY(10px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+.btn-cancelar-compra:hover{
+    background-color: #EA4335;
+}
+.btn-share-factura{
+    padding: 5px 7px;
+    width: 150px;
+}
+
+@media (min-width: 768px) {
+    .factura-cliente {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px 24px;
+        min-height: 100vh;
+        background-color: rgba(255, 255, 255, 0.98);
+        gap: 16px;
+    }
+    .factura-cliente.show-done::before{
+        right: 300px;
+    }
+    .name-store,
+    .texto-tu-factura,
+    .name-client-container,
+    .addrees-client-container,
+    .phone-number-client-container,
+    .shoe-size-container,
+    .product-name-container,
+    .cantidad-de-producto-container,
+    .precio-total-container,
+    .container-btns-important-in-factura,
+    .container-btn-cancelar-compra,
+    .texto-compartir-factura {
+        width: min(820px, 100%);
+    }
+
+    .name-client-container,
+    .addrees-client-container,
+    .phone-number-client-container,
+    .shoe-size-container {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .input-factura {
+        margin: 0;
+        flex: 1;
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .cantidad-de-producto-container {
+        justify-content: flex-start;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .cantidad-de-producto-numero {
+        font-size: 1.05rem;
+        margin: 0 10px 0 0;
+    }
+
+    .precio-total-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .precio-total {
+        font-size: 1.15rem;
+    }
+
+    .btn-important-in-factura {
+        min-width: 160px;
+        padding: 10px 18px;
+    }
+
+    .btn-share-factura {
+        width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .factura-cliente {
+        padding: 52px 32px;
+    }
+
+    .name-store {
+        font-size: 2rem;
+    }
+
+    .texto-tu-factura {
+        font-size: 1.25rem;
+    }
+
+    .container-btns-important-in-factura {
+        justify-content: flex-start;
+    }
+
+    .container-btn-cancelar-compra {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .texto-compartir-factura {
+        text-align: left;
+    }
+}
